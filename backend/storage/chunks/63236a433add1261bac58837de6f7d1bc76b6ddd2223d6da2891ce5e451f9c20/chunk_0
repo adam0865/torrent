@@ -1,0 +1,28 @@
+docker --version
+docker-compose --version
+git --version
+mkdir docker-Hadoop
+cd docker-Hadoop
+git clone https://github.com/huzaifa-bilal-01/Hadoop-on-Docker
+cd hadoop-on-docker
+docker-compose up -d
+docker container ls
+docker exec -it namenode /bin/bash
+hadoop --version
+docker cp code namenode:/ (di cmd)
+cd code
+ls
+cd Hadoop_Code
+ls
+hdfs dfs -mkdir /user
+hdfs dfs -mkdir /user/root
+hdfs dfs -mkdir /user/root/input
+hdfs dfs -ls /
+cd input
+ls
+hdfs dfs -ls /user/root
+ls
+cd ../
+ls
+ hadoop jar wordCount.jar org.apache.hadoop.examples.WordCount input output
+hdfs dfs -cat /user/root/output/*
