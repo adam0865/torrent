@@ -28,11 +28,11 @@ app.add_middleware(
 # =========================
 # PATH CONFIG
 # =========================
-BASE = "storage"
-UPLOADS = f"{BASE}/uploads"
-CHUNKS = f"{BASE}/chunks"
-REBUILT = f"{BASE}/rebuilt"
-NODES_FILE = f"{BASE}/nodes.json"
+BASE = os.path.join(os.path.dirname(__file__), "storage")
+UPLOADS = os.path.join(BASE, "uploads")
+CHUNKS = os.path.join(BASE, "chunks")
+REBUILT = os.path.join(BASE, "rebuilt")
+NODES_FILE = os.path.join(BASE, "nodes.json")
 
 for d in [UPLOADS, CHUNKS, REBUILT]:
     os.makedirs(d, exist_ok=True)
